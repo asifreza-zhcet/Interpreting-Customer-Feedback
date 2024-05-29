@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def home():
     if request.method == 'POST':
-        dclsa = request.form['inputext']
+        data = request.form['inputext']
         prediction = predict_senti(data)[0]
         print(prediction)
         return render_template('predict.html', item=prediction)
